@@ -1,6 +1,6 @@
 import panelFoto from './assets/PanelWindow.png';
-import fotoPerfil from './assets/foto-perfil.png';
 import github from './assets/github.png';
+import fotoPerfil from './assets/foto-perfil.webp'
 import linkedin from './assets/linkedin.png';
 import instagram from './assets/instagram.png';
 import { HelmetProvider } from 'react-helmet-async'
