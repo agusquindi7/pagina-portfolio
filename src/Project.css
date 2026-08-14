@@ -1,0 +1,115 @@
+.project-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* dos columnas iguales */
+  gap: 30px;
+  margin: 40px;
+  background-color: #2323239f;
+  border: 2px solid #ffffff;
+  border-radius: 24px;
+  padding: clamp(20px, 4vw, 40px);
+  align-items: start;
+}
+
+.project-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project-title {
+  margin: 0;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+}
+
+.project-description {
+  margin: 0;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.project-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-end; /* alinea "Technologies used" e íconos a la derecha */
+}
+
+.project-technologies {
+  margin: 0;
+  font-weight: 700;
+}
+
+.tech-icon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.project-img {
+  width: 50%;
+  aspect-ratio: 1 / 1; /* imagen cuadrada, como el boceto */
+  object-fit: cover;
+  border-radius: 20px;
+  border: 2px solid #ffffff;
+}
+
+.delete-button {
+  background-color: #ffffff91;
+  border-radius: 8px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(0);
+  transition: transform 0.15s ease;
+}
+
+.delete-button:hover {
+  background-color: #ffffff;
+  transform: translateY(-4px);
+  transition: transform 0.4s ease;
+}
+
+.delete-button:active {
+  background-color: #ff000051;
+  transform: translateY(4px);
+}
+
+.project-links {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #007bff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.project-links:hover {
+  background-color: #0056b3;
+  transform: translateY(-4px);
+}
+
+/* RESPONSIVE — en mobile, apilar en una sola columna */
+@media (max-width: 700px) {
+  .project-container {
+    grid-template-columns: 1fr;
+  }
+
+  .project-right {
+    align-items: flex-start;
+  }
+
+  .tech-icon-grid {
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,124 @@
+#root {
+  font-family: "JetBrains Mono", monospace;
+  color: #ffffff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.navbar-title h1 {
+  margin: 0;
+}
+
+.navbar-title p {
+  margin: 0;
+  font-size: clamp(0.65rem, 2vw, 0.9rem);
+  opacity: 0.8;
+}
+
+.navbar-links {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-links li {
+  cursor: pointer;
+  padding: 10px 5px;
+  font-size: clamp(0.6rem, 2.2vw, 1.3rem);
+  border-radius: 999px;
+}
+
+/* TRANSICIONES */
+
+.navbar-links li {
+  transform: translateY(0);
+  transition: transform 0.15s ease;
+}
+
+.navbar-links li:hover {
+  transform: translateY(-8px);
+  transition: transform 0.5s ease;
+  box-shadow: inset 0 -4px 0 #3333335c;
+}
+
+/* TYPEWRITER EFFECT */
+
+.typewriter {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.typewriter h1 {
+  display: inline-block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: clamp(0.9rem, 2.2vw, 1.3rem);
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  border-right: 1px solid #ffffff;
+  animation:
+    typing 3s steps(25) forwards,
+    blink 1s step-end 3,
+    hide-cursor 0.1s linear 3s forwards;
+}
+
+.typewriter p {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  border-right: 1px solid transparent;
+  animation:
+    typing-2 3s steps(21) forwards,
+    blink 1s step-end infinite;
+  animation-delay: 3s, 3s;
+}
+
+@keyframes hide-cursor {
+  to {
+    border-right: none;
+  }
+}
+
+@keyframes turn-on-cursor {
+  to {
+    border-right: 1px solid #ffffff;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 25ch;
+  }
+}
+
+@keyframes typing-2 {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 21ch;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    border-color: #ffffff;
+  }
+  50% {
+    border-color: transparent;
+  }
+}
