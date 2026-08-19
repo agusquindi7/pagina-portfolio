@@ -52,11 +52,25 @@
 }
 
 .project-img {
-  width: 50%;
-  aspect-ratio: 1 / 1; /* imagen cuadrada, como el boceto */
+  width: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 20px;
   border: 2px solid #ffffff;
+  cursor: zoom-in;
+  transform: scale(1);
+  filter: brightness(1);
+  transition:
+    transform 0.15s ease,
+    filter 0.15s ease;
+}
+
+.project-img:hover {
+  transform: scale(1.03);
+  filter: brightness(0.85);
+  transition:
+    transform 0.4s ease,
+    filter 0.3s ease;
 }
 
 .delete-button {
@@ -96,6 +110,44 @@
 
 .project-links:hover {
   background-color: #0056b3;
+  transform: translateY(-4px);
+}
+
+.image-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: zoom-out;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.image-modal-full {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+  cursor: default;
+}
+
+.view-project-link {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #28a745;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.view-project-link:hover {
+  background-color: #218838;
   transform: translateY(-4px);
 }
 
