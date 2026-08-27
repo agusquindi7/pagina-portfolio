@@ -21,6 +21,7 @@ function Project({ project, handleDelete, deletingId }) {
         <div className="project-container">
             <div className="project-left">
                 <h2 className='project-title'>{project.title}</h2>
+                <p>Started on {project.startDate} - Ended on {project.endDate}</p>
                 <p className="project-description">
                     {project.description}
                 </p>
